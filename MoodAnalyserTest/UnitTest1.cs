@@ -10,17 +10,22 @@ namespace MoodAnalyserTest
         public void analyseSadMood()
         {
             MoodAnalyse analyse = new MoodAnalyse("SAD");
-            Assert.AreEqual("SAD", analyse.message);
+            string mood = analyse.analyseMood();
+            Assert.AreEqual("SAD", mood);
         }
         [TestMethod]
         public void analyseHappyMood()
         {
             MoodAnalyse analyse = new MoodAnalyse("I am in Happy Mood");
-            Assert.AreEqual("HAPPY", analyse.message);
+            string mood = analyse.analyseMood();
+            Assert.AreEqual("HAPPY", mood);
         }
-
-
-
-
+        [TestMethod]
+        public void returnForNull()
+        {
+            MoodAnalyse analyse = new MoodAnalyse();
+            string mood = analyse.analyseMood();
+            Assert.AreEqual("HAPPY", mood);
+        }
     }
 }
