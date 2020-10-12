@@ -20,7 +20,6 @@ namespace MoodAnalyzer
 
                 this.message = "HAPPY";
             }
-
         }
         
     }

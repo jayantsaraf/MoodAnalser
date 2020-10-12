@@ -6,8 +6,8 @@ namespace MoodAnalyserTest
     public class UnitTest1
     {
 
+        [TestMethod]
+
         
-
-
     }
 }
