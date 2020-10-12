@@ -6,9 +6,7 @@ namespace MoodAnalyzer
 {
     public class MoodAnalyse
     {
-        public string analyseMood(string message)
-        {
-            if (message.Contains("sad".ToLower()))
+      if (message.Contains("sad".ToLower()))
             {
                 return "SAD";
             }
@@ -17,7 +15,6 @@ namespace MoodAnalyzer
                 
                 return "HAPPY";
             }
-            
         }
     }
 }

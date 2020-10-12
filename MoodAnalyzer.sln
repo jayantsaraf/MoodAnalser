@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoodAnalyzer", "MoodAnalyzer\MoodAnalyzer.csproj", "{40A67B9A-6C49-4C14-A7DD-8156DA730E9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoodAnalyserTest", "MoodAnalyserTest\MoodAnalyserTest.csproj", "{3EFB8A62-D02A-45ED-BD71-23D978A78084}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoodAnalyzerTest", "MoodAnalyserTest\MoodAnalyzerTest.csproj", "{3EFB8A62-D02A-45ED-BD71-23D978A78084}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
