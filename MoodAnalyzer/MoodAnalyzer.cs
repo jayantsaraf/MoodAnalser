@@ -10,6 +10,9 @@ namespace MoodAnalyzer
         public string message;
         public MoodAnalyse()
         {
+
+            this.message = " ";
+
         }
         public MoodAnalyse(string message)
         {
@@ -18,11 +21,12 @@ namespace MoodAnalyzer
 
         public string analyseMood()
         {
+
             string mood =""; 
             if(this.message==null)
             {
                 mood = "HAPPY";
-            }
+             }
             else
             {
                 try
@@ -40,6 +44,7 @@ namespace MoodAnalyzer
                 {
                     mood = "HAPPY";
                 }
+            }
             }
             
             return mood;

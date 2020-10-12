@@ -7,6 +7,7 @@ namespace MoodAnalyserTest
     {
 
         [TestMethod]
+
         public void analyseSadMood()
         {
             MoodAnalyse analyse = new MoodAnalyse("SAD");
@@ -27,5 +28,8 @@ namespace MoodAnalyserTest
             string mood = analyse.analyseMood();
             Assert.AreEqual("HAPPY", mood);
         }
+
+        
+
     }
 }
