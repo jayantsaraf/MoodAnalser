@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace MoodAnalyzer
@@ -9,7 +10,9 @@ namespace MoodAnalyzer
         public string message;
         public MoodAnalyse()
         {
+
             this.message = " ";
+
         }
         public MoodAnalyse(string message)
         {
@@ -18,18 +21,33 @@ namespace MoodAnalyzer
 
         public string analyseMood()
         {
-            try
+
+            string mood =""; 
+            if(this.message==null)
             {
-                if (this.message.Contains("sad".ToLower()))
+                mood = "HAPPY";
+             }
+            else
+            {
+                try
                 {
-                    return "SAD";
+                    if (this.message.Contains("sad") || this.message.Contains("SAD") || this.message.Contains("Sad"))
+                    {
+                        mood = "SAD";
+                    }
+                    else if (this.message.Contains("happy") || this.message.Contains("Happy") || this.message.Contains("HAPPY"))
+                    {
+                        mood = "HAPPY";
+                    }
+                }
+                catch
+                {
+                    mood = "HAPPY";
                 }
             }
-            catch
-            {
-                return "HAPPY";
             }
-            return "HAPPY";
+            
+            return mood;
         }
         
     }
