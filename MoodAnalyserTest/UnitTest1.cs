@@ -9,11 +9,11 @@ namespace MoodAnalyserTest
         [TestMethod]
         public void analyseSadMood()
         {
-            MoodAnalyse analyse = new MoodAnalyse();
-            string message = analyse.analyseMood("sad");
-            Assert.AreEqual("SAD", message);
+            MoodAnalyse analyse = new MoodAnalyse("SAD");
+            Assert.AreEqual("SAD", analyse.message);
         }
         
+
 
 
     }
