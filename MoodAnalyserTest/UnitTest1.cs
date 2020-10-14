@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MoodAnalyzer;
+
 namespace MoodAnalyserTest
 {
     [TestClass]
@@ -55,6 +56,14 @@ namespace MoodAnalyserTest
             {
                 Assert.AreEqual("Mood should not be null", e.Message);
             }
+        }
+        [TestMethod]
+        public void GivenMoodANalyserClassName_ShouldReturnMoodAnalyserObject()
+        {
+            string message = null;
+            object expected = new MoodAnalyse(message);
+            object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyzer.MoodAnalyse", "MoodAnalyse");////First one is calling class Mood Analyser present in Namespace MoodAnalyserAppWithCore and second one is calling constructor of that class
+            Assert.AreEqual(expected.GetType(), obj.GetType());
         }
 
 
