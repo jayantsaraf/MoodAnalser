@@ -45,10 +45,8 @@ namespace MoodAnalyzer
                     mood = "HAPPY";
                 }
             }
-            }
-            
             return mood;
+        } 
         }
         
     }
-}
