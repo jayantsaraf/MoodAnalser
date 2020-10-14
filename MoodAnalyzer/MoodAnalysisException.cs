@@ -16,7 +16,7 @@ namespace MoodAnalyzer
             OBJECT_CREATION_ISSUE
         }
         private readonly ExceptionType ExceptType;
-        public MoodAnalysisException(ExceptionType Type, string message)
+        public MoodAnalysisException(ExceptionType Type, string message) : base(message)
         {
             this.ExceptType = Type;
         }

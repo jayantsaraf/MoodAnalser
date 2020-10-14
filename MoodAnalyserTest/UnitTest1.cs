@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MoodAnalyzer;
+
 namespace MoodAnalyserTest
 {
     [TestClass]
@@ -55,6 +56,30 @@ namespace MoodAnalyserTest
             {
                 Assert.AreEqual("Mood should not be null", e.Message);
             }
+        }
+        [TestMethod]
+        public void GivenMoodANalyserClassName_ShouldReturnMoodAnalyserObject()
+        {
+            string message = null;
+            object expected = new MoodAnalyse(message);
+            object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyzer.MoodAnalyse", "MoodAnalyse");
+            Assert.AreEqual(expected.GetType(), obj.GetType());
+        }
+        [TestMethod]
+        public void GivenMoodANalyserClassName_ShouldReturnWrongClassException()
+        {
+            try
+            {
+                string message = null;
+                object expected = new MoodAnalyse(message);
+                object obj = MoodAnalyserFactory.CreateMoodAnalyser("abc.abc", "abc");
+                Assert.AreEqual(expected.GetType(), obj.GetType());
+            }
+            catch(MoodAnalysisException e)
+            {
+                Assert.AreEqual("No Such Class Found", e.Message);
+            }
+            
         }
 
 
