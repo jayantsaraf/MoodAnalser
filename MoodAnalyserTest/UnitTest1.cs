@@ -29,7 +29,7 @@ namespace MoodAnalyserTest
             Assert.AreEqual("HAPPY", mood);
         }
         [TestMethod]
-        public void Given_Empty_Mood_Should_Throw_MoodAnalysisException_Indicating_EmptyMood()
+        public void Given_Empty_Mood_Should_Throw_MoodAnalysisException_Indicating_EmptyMood()////checking empty mood
         {
             try
             {
