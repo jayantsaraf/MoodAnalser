@@ -62,10 +62,25 @@ namespace MoodAnalyserTest
         {
             string message = null;
             object expected = new MoodAnalyse(message);
-            object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyzer.MoodAnalyse", "MoodAnalyse");////First one is calling class Mood Analyser present in Namespace MoodAnalyserAppWithCore and second one is calling constructor of that class
+            object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyzer.MoodAnalyse", "MoodAnalyse");
             Assert.AreEqual(expected.GetType(), obj.GetType());
         }
-
+        [TestMethod]
+        public void GivenMoodANalyserClassName_ShouldReturnWrongClassException()
+        {
+            try
+            {
+                string message = null;
+                object expected = new MoodAnalyse(message);
+                object obj = MoodAnalyserFactory.CreateMoodAnalyser("abc.abc", "abc");
+                Assert.AreEqual(expected.GetType(), obj.GetType());
+            }
+            catch(MoodAnalysisException e)
+            {
+                Assert.AreEqual("No Such Class Found", e.Message);
+            }
+            
+        }
 
     }
 }
