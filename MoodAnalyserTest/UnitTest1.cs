@@ -97,6 +97,14 @@ namespace MoodAnalyserTest
             }
 
         }
+        [TestMethod]
+        public void GivenMoodANalyserClassName_ShouldReturnMoodAnalyserParameterizedObject()
+        {
+            string message = "Happy";
+            object expected = new MoodAnalyse(message);
+            object obj = MoodAnalyserFactory.CreateMoodAnalyserWithParameters("MoodAnalyzer.MoodAnalyse", "MoodAnalyse", "Happy");
+            Assert.AreEqual(expected.GetType(), obj.GetType());
+        }
 
     }
 }
