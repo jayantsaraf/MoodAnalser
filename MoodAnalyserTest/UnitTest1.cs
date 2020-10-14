@@ -81,6 +81,22 @@ namespace MoodAnalyserTest
             }
             
         }
+        [TestMethod]
+        public void GivenMoodANalyserClassName_ShouldReturnWrongConstructorException()
+        {
+            try
+            {
+                string message = null;
+                object expected = new MoodAnalyse(message);
+                object obj = MoodAnalyserFactory.CreateMoodAnalyser("MoodAnalyzer.MoodAnalyse", "abc");
+                Assert.AreEqual(expected.GetType(), obj.GetType());
+            }
+            catch (MoodAnalysisException e)
+            {
+                Assert.AreEqual("No such method", e.Message);
+            }
+
+        }
 
     }
 }

@@ -33,7 +33,7 @@ namespace MoodAnalyzer
             }
             else
             {
-                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "Constructor is not found");
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "No such method");
             }
         }
     }
