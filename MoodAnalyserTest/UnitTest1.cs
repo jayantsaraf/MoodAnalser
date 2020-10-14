@@ -108,10 +108,32 @@ namespace MoodAnalyserTest
         [TestMethod]
         public void GivenMoodANalyserClassName_ShouldReturnWrongClassMessage()
         {
-            string message = "Happy";
-            object expected = new MoodAnalyse(message);
-            object obj = MoodAnalyserFactory.CreateMoodAnalyserWithParameters("abc.abc", "abc", "Happy");
-            Assert.AreEqual(expected.GetType(), obj.GetType());
+            try
+            {
+                string message = "Happy";
+                object expected = new MoodAnalyse(message);
+                object obj = MoodAnalyserFactory.CreateMoodAnalyserWithParameters("abc.abc", "abc", "Happy");
+                Assert.AreEqual(expected.GetType(), obj.GetType());
+            }
+            catch (MoodAnalysisException e)
+            {
+                Assert.AreEqual("No Such Class Found", e.Message);
+            }
+        }
+        [TestMethod]
+        public void GivenMoodANalyserClassName_ShouldReturnWrongConstructorMessage()
+        {
+            try
+            {
+                string message = "Happy";
+                object expected = new MoodAnalyse(message);
+                object obj = MoodAnalyserFactory.CreateMoodAnalyserWithParameters("MoodAnalyzer.MoodAnalyse", "abc", "Happy");
+                Assert.AreEqual(expected.GetType(), obj.GetType());
+            }
+            catch (MoodAnalysisException e)
+            {
+                Assert.AreEqual("No such method", e.Message);
+            }
         }
 
     }
